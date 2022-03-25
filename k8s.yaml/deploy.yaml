@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana-add-users
+  namespace: support
+  labels:
+    app: kibana-add-users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana-add-users
+  template:
+    metadata:
+      labels:
+        app: kibana-add-users
+      annotations:
+        kubectl.kubernetes.io/restartedAt: '2022-03-15T08:56:15Z'
+    spec:
+      containers:
+        - name: kibana-add-users
+          image: gitlab-hrp.ru:5050/sre/initial/bmax1977/kibanacloud:latest
+          ports:
+            - name: grafana
+              containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: kibana-add-users

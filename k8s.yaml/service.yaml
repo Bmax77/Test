@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana-add-users
+  namespace: support
+spec:
+  ports:
+    - name: service
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: kibana-add-users
+  clusterIP: 10.247.122.182
+  type: ClusterIP
+  sessionAffinity: None
