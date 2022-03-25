@@ -1,0 +1,15 @@
+#app{
+    text-align: center;
+    margin-top: 5em;
+}
+#response{
+    text-align: center;
+    width: 500px;
+}
+#bin{
+    /* margin-block: 1em 0.5em; */
+}
+#help{
+    font-size: 0.8em;
+    /* margin-block: 0.5em 0.5em; */
+}

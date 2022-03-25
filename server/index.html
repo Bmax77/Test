@@ -9,10 +9,12 @@
     <script type="text/javascript" src="index.js" defer></script>
 </head>
 <body>
-<div>
-    <label>Введите первые 6 цифр номера карты </label>
-    <input type="number" pattern="[0-9]{6}" id="bin">
-    <input type="submit" id="send_bttn">
+<div id="app">
+        <h4>Определение банка по номеру карты</h4>
+            <input type="digit" placeholder="0000-0000-0000-0000" size="20" id="bin"></br>
+        <span id="help">Введите первые 6 цифр номера карты</span>
+        <p><input type="submit" id="send_bttn"></p>
+        <textarea id="response"></textarea>
 </div>
 </body>
 </html>
