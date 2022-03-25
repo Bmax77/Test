@@ -1,29 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kibana-add-users
-  namespace: support
+  name: bin-server
+  namespace: default
   labels:
-    app: kibana-add-users
+    app: bin-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kibana-add-users
+      app: bin-server
   template:
     metadata:
       labels:
-        app: kibana-add-users
-      annotations:
-        kubectl.kubernetes.io/restartedAt: '2022-03-15T08:56:15Z'
+        app: bin-server
     spec:
       containers:
-        - name: kibana-add-users
+        - name: bin-server
           image: gitlab-hrp.ru:5050/sre/initial/bmax1977/kibanacloud:latest
+          imagePullPolicy: Never
           ports:
-            - name: grafana
+            - name: bin-server
               containerPort: 8080
               protocol: TCP
           envFrom:
             - configMapRef:
-                name: kibana-add-users
+                name: bin-server

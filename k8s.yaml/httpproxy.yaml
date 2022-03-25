@@ -1,16 +1,16 @@
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
-  name: kibana-add-users
-  namespace: support
+  name: bin-server
+  namespace: default
 spec:
   routes:
     - conditions:
         - prefix: /
       services:
-        - name: kibana-add-users
+        - name: bin-server
           port: 80
   virtualhost:
-    fqdn: kibana-add-users.service.core
+    fqdn: bin-server.service.core
     tls:
       secretName: kibana-tls

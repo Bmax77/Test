@@ -1,10 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kibana-add-users
-  namespace: support
+  name: bin-server
+  namespace: default
 data:
   # property-like keys; each key maps to a simple value
-  HOMEPATH: /home
-  pass1: re_EHO3J
-  pass2: '!41xpyqIJP_!hGEIto'
+  HOMEPATH: /app
