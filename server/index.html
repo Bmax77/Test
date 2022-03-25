@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css" />
     <title>BIN Server</title>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index.js" defer></script>
 </head>
 <body>
-
+<div>
+    <label>Введите первые 6 цифр номера карты </label>
+    <input type="number" pattern="[0-9]{6}" id="bin">
+    <input type="submit" id="send_bttn">
+</div>
 </body>
 </html>

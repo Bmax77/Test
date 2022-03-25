@@ -1,6 +1,6 @@
 from server.server_flask import *
 # import server.server_flask
-app.run(host='0.0.0.0', port=8080, debug=True)
+app.run(host='0.0.0.0', port=8080, threaded=True, debug=True)
 
 # try:
 #     web_dir = os.path.join(os.path.dirname(__file__), 'server')
