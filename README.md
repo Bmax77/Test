@@ -23,7 +23,7 @@
 
     $ kubectl apply -f bin_server_k8s.yml  
     $ kubektl get po -A  
-    Вывод команды должен быть такм:  
+    Вывод команды должен быть таким:  
         NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE  
         default       bin-server-6dc878d955-bw5kg        1/1     Running   0              24s  
 
