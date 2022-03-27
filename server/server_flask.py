@@ -5,6 +5,7 @@ import pathlib
 import re
 import csv
 import json
+import sys
 
 # template_dir = ''
 data = ()
@@ -30,13 +31,9 @@ def readiness():
     resp = app.response_class(response='Ready', status=200, mimetype='text/text')
     return(resp)
 
-@app.route('/about')
-def about():
-    return("Hello world")
-
 @app.route('/cards/<card_number>', methods=['GET'])
 def card(card_number):
-    card_number = re.match(r'\d{16}', card_number)
+    card_number = re.match(r'\d{16,20}', card_number)
     if card_number is not None:
         resp = None
         card_number = card_number.group(0)
@@ -46,20 +43,21 @@ def card(card_number):
                 resp = app.response_class(response=json.dumps(row), status=200, mimetype='text/text')
                 break
             else:
-                resp = app.response_class(response='Not found', status=500, mimetype='text/text')
+                resp = app.response_class(response='Not found', status=404, mimetype='text/text')
         return(resp)
     else:
-        resp = app.response_class(response='Incorrect data', status=500, mimetype='text/text')
+        resp = app.response_class(response='Internal server error', status=500, mimetype='text/text')
         return(resp)
 
 
 
 
-# if __name__ == "__main__":
-path = pathlib.Path(__file__).parent.resolve()
-print('Main' + str(path))
-with open(path.joinpath('binlist-data.csv'), newline='') as f:
-    reader = csv.reader(f)
-    data = list(reader)
-print(len(data))
-app.run(host='0.0.0.0', port=8080, threaded=True, debug=True)
+if __name__ == "__main__":
+    port = 8080
+    if len(sys.argv) == 3 and '-p' in sys.argv: 
+        port = sys.argv[2]        
+    path = pathlib.Path(__file__).parent.resolve()
+    with open(path.joinpath('binlist-data.csv'), newline='') as f:
+        reader = csv.reader(f)
+        data = list(reader)
+    app.run(host='0.0.0.0', port=port, threaded=True, debug=True)
