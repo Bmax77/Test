@@ -24,7 +24,6 @@ git clone -b SberTech_Test1 <remote-repo-url> https://github.com/Bmax77/Test.git
 
 Если что то пошло не так:  
 Выполнить команды:  
-
     $ kubectl apply -f bin_server_k8s.yml  
     $ kubektl get po -A  
     Вывод команды должен быть такм:  
