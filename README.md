@@ -1,6 +1,6 @@
 # Тестовое задание.  
 
-    git clone -b SberTech_Test1 <remote-repo-url> https://github.com/Bmax77/Test.git  
+    git clone -b SberTech_Test1 https://github.com/Bmax77/Test.git  
 
 Для запуска сервера локально введите команду: python3 server/server_flask.py [-p PORT] в директории проекта, если не указан ключ -p и номер порта, то сервер запустится на порту 8080.
 
