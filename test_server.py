@@ -29,8 +29,6 @@ class ServerTests(unittest.TestCase):
                     raise
                 server_wait = server_wait + 1
                 print('Waiting start server: %ds\r'%server_wait, end = '')
-        print(' ')
-
 
     def test_a_readiness(self):
         response = requests.get(f'{ServerTests.url}/health/readiness')
