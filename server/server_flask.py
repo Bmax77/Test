@@ -60,4 +60,4 @@ if __name__ == "__main__":
     with open(path.joinpath('binlist-data.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
-    app.run(host='0.0.0.0', port=port, threaded=True, debug=True)
+    app.run(host='0.0.0.0', port=port, threaded=True, debug=False)
