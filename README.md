@@ -22,16 +22,16 @@ git clone -b SberTech_Test1 <remote-repo-url> https://github.com/Bmax77/Test.git
 Протестирует запрос не валидного номера карты.  
 После проведения тестов удалит деплой сервиса из minikube.  
 
-Если что то пошло не так:
-Выполнить команды:
-    $ kubectl apply -f bin_server_k8s.yml
-    $ kubektl get po -A
-    Вывод команды должен быть такм:
-    NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE
-    default       bin-server-6dc878d955-bw5kg        1/1     Running   0              24s
+Если что то пошло не так:  
+Выполнить команды:  
+    $ kubectl apply -f bin_server_k8s.yml  
+    $ kubektl get po -A  
+    Вывод команды должен быть такм:  
+    NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE  
+    default       bin-server-6dc878d955-bw5kg        1/1     Running   0              24s  
 
-    $ minikube service bin-server --url
-    http://192.168.49.2:30689 - IP и порт могут быть другими
-    Открыть полученную ссылку в браузере.
-    Если под в статусе Running но ссылка не открылась, то устранить причину сетевой недоступности между локальным хостом и приложением в minikube.    
+    $ minikube service bin-server --url  
+    http://192.168.49.2:30689 - IP и порт могут быть другими  
+    Открыть полученную ссылку в браузере.  
+    Если под в статусе Running но ссылка не открылась, то устранить причину сетевой недоступности между локальным хостом и приложением в minikube.
 
